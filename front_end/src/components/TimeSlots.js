@@ -21,7 +21,7 @@ const TimeSlots = () => {
       setSlots(data.records)
     }
     getSlots()
-  })
+  }, [0])
 
   return (
    <div>
