@@ -11,11 +11,15 @@ const TimeSlots = () => {
     
     <div className="row">
       <div className="col-3"></div>
-      <div className="col-6">
-          <a href="/newslot" class="my-button">Fill in</a>
+      <div className="col-6 mt-5">
         <TimeSlotTable timeSlots={time_slots_data} />
       </div>
     </div>
+    <div className="text-center">
+        <a href="/newslot" class="my-button">Fill in</a>
+    </div>
+      
+
    </div>
   )
 }
