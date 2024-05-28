@@ -60,7 +60,7 @@ const NewTimeSlot = () => {
 
 
                   <div className="text-center">
-                      <button type="submit" class="btn btn-primary">Submit</button>
+                      <button type="submit" className="btn btn-primary">Submit</button>
                   </div>
               </form>
           </div>

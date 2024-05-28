@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const RegistrationForm = () => {
+    const navigate = useNavigate()
     const [formData, setFormData] = useState({
         first_name: '',
         last_name: '',
@@ -27,6 +29,7 @@ const RegistrationForm = () => {
             const response = await axios.post(`${BASE_URL}/auth/register`, formData);
             console.log('Registration successful:', response.data);
             console.log('Registration successful');
+            window.location.replace("/")
         } catch (error) {
             console.error('Registration failed:', error.response.data);
             console.log('Registration failed');
@@ -37,13 +40,15 @@ const RegistrationForm = () => {
     return (
         <div className="container mt-5">
             <div className="row">
-                <div className="col-lg-4 col-md-6 col-sm-12"></div>
-                <div className="col-lg-4 col-md-6 col-sm-12">
+                <div className="col-lg-3 col-md-6 col-sm-12"></div>
+                <div className="col-lg-6 col-md-6 col-sm-12">
         <div className='text-center'>
         <h2>Sign Up</h2>
         </div>
+        
             <form onSubmit={handleSubmit}>
-                <div className="mb-3">
+            <div className='row mb-3'>
+            <div className="col">
                     <label htmlFor="first_name" className="form-label">First Name</label>
                     <input
                         type="text"
@@ -55,7 +60,7 @@ const RegistrationForm = () => {
                         required
                     />
                 </div>
-                <div className="mb-3">
+                <div className="col">
                     <label htmlFor="last_name" className="form-label">Last Name</label>
                     <input
                         type="text"
@@ -67,6 +72,8 @@ const RegistrationForm = () => {
                         required
                     />
                 </div>
+            </div>
+                
                 <div className="mb-3">
                     <label htmlFor="username" className="form-label">Username</label>
                     <input

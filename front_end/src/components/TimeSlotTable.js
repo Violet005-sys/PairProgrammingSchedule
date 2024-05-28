@@ -6,11 +6,13 @@ function TimeSlotTable({ timeSlots }) {
         
         <table className="table table-md table-responsive table-bordered">
                 <thead>
+                    <tr>
                     <th>#</th>
                     <th>Day</th>
                     <th>Start time</th>
                     <th>End time</th>
                     <th></th>
+                    </tr>
                 </thead>
                 
                 <tbody>
