@@ -11,3 +11,142 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Basic table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  /* Combine borders */
+  margin: 20px 0;
+  /* Add some space above and below */
+  font-family: Arial, sans-serif;
+  /* Change font */
+}
+
+/* Table header styling */
+thead th {
+  background-color: rgb(0, 123, 255);
+  /* Background color */
+  color: white;
+  /* Text color */
+  padding: 10px;
+  /* Padding */
+  text-align: left;
+  /* Text alignment */
+  border-bottom: 2px solid #ddd;
+  /* Bottom border */
+}
+
+/* Table body row styling */
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+  /* Stripe even rows */
+}
+
+tbody tr:hover {
+  background-color: #ddd;
+  /* Highlight row on hover */
+}
+
+/* Table cell styling */
+td,
+th {
+  border: 1px solid #ddd;
+  /* Border for all cells */
+  padding: 8px;
+  /* Padding for all cells */
+  text-align: left;
+  /* Text alignment */
+}
+
+/* Add extra padding to the header */
+thead th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+/* Additional styling for better presentation */
+table {
+  border: 1px solid #ddd;
+  /* Outer border for the table */
+}
+
+/* Style for the button */
+.my-button {
+  display: inline-block;
+  /* Makes the anchor behave like a button */
+  padding: 10px 20px;
+  /* Padding inside the button */
+  font-size: 16px;
+  /* Font size */
+  color: white;
+  /* Text color */
+  background-color: rgb(0, 123, 255);
+  /* Background color (Bootstrap primary color) */
+  border: none;
+  /* No border */
+  border-radius: 5px;
+  /* Rounded corners */
+  text-align: center;
+  /* Center text */
+  text-decoration: none;
+  /* Remove underline from the link */
+  cursor: pointer;
+  /* Pointer cursor on hover */
+  transition: background-color 0.3s ease;
+  /* Smooth transition for background color */
+}
+
+.my-button:hover {
+  background-color: rgb(0, 105, 217);
+  /* Darker shade for hover effect */
+}
+
+.my-button:active {
+  background-color: rgb(0, 92, 191);
+  /* Even darker shade for active effect */
+}
+
+
+
+
+/* Style the Time Slots section */
+.col-4.mt-4 {
+  border: 1px solid #ddd;
+  /* Add a border for visual separation */
+  border-radius: 5px;
+  /* Add rounded corners for a softer look */
+  padding: 45px;
+  /* Add some padding for better spacing */
+  
+}
+
+/* Style the title (h5) */
+.col-4.mt-4 h5.text-center {
+  margin-bottom: 15px;
+  /* Add some space below the title */
+}
+
+
+
+/* Style the form labels */
+.col-4.mt-4 form label.form-label {
+  font-weight: bold;
+  /* Make labels stand out */
+  margin-bottom: 5px;
+  /* Add some space below labels */
+}
+
+/* Style the select elements */
+.col-4.mt-4 form select.form-select {
+  width: 100%;
+  /* Make the select elements fill the width of their container */
+  margin-bottom: 15px;
+  /* Add some space below select elements */
+}
+
+/* Style the submit button */
+.col-4.mt-4 form button.btn.btn-primary {
+  width: 30%;
+  /* Make the button fill the width of its container */
+}
