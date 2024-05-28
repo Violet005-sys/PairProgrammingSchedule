@@ -108,3 +108,45 @@ table {
 }
 
 
+
+
+/* Style the Time Slots section */
+.col-4.mt-4 {
+  border: 1px solid #ddd;
+  /* Add a border for visual separation */
+  border-radius: 5px;
+  /* Add rounded corners for a softer look */
+  padding: 45px;
+  /* Add some padding for better spacing */
+  
+}
+
+/* Style the title (h5) */
+.col-4.mt-4 h5.text-center {
+  margin-bottom: 15px;
+  /* Add some space below the title */
+}
+
+
+
+/* Style the form labels */
+.col-4.mt-4 form label.form-label {
+  font-weight: bold;
+  /* Make labels stand out */
+  margin-bottom: 5px;
+  /* Add some space below labels */
+}
+
+/* Style the select elements */
+.col-4.mt-4 form select.form-select {
+  width: 100%;
+  /* Make the select elements fill the width of their container */
+  margin-bottom: 15px;
+  /* Add some space below select elements */
+}
+
+/* Style the submit button */
+.col-4.mt-4 form button.btn.btn-primary {
+  width: 30%;
+  /* Make the button fill the width of its container */
+}
