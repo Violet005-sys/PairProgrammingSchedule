@@ -1,0 +1,8 @@
+const BASE_URL = 'https//:appointments-booking-api.onrender.com';
+
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY1NjFjYjRjODQ2MWU1ZmZmNzVmNWU5IiwiZW1haWwiOiJqYW5lbGRvZUBnbWFpbC5jb20iLCJ1c2VybmFtZSI6ImphbmVsZG9lIiwiZmlyc3RfbmFtZSI6IkphbmVsIiwibGFzdF9uYW1lIjoiRG9lIiwicGhvbmVfbnVtYmVyIjoiMDc1MzU2NjI4MjEifSwiaWF0IjoxNzE2OTE5NDk4LCJleHAiOjE3MTY5MjMwOTh9.tE5OkBCWYohuZ_iDBsRfL4Dt76pCBamxSDGMIdyOx3g";
+
+module.exports = {
+    BASE_URL,
+    token
+}
