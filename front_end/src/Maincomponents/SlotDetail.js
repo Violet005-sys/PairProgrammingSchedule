@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { token } from "../utils/configs";
-import BookingModal from "../Components/Booking/BookingModal";
+import BookingModal from "../components/Booking/BookingModal";
+import AuthContext from "../context/AuthContext";
 
 const BASE_URL = "https://appointments-booking-api.onrender.com";
 
 const SlotDetail2 = () => {
   const { id } = useParams();
   const [slot, setSlot] = useState({});
+
+  const token = useContext(AuthContext)
 
   useEffect(() => {
     const getSlot = async () => {

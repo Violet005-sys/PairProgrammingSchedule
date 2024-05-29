@@ -1,40 +1,33 @@
-
-import React from 'react'
+import React, { useContext } from 'react'
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import TimeSlots from "./Maincomponents/TimeSlots";
 import NewTimeSlot from './Maincomponents/NewTimeSlot';
 import SlotDetail from './Maincomponents/SlotDetail';
-//import RegistrationForm from './Maincomponents/RegistrationForm';
+import RegistrationForm from './Maincomponents/RegistrationForm';
+import Sessions from './components/sessions/Sessions';
+import AuthContext from './context/AuthContext';
+import SessionParticipants from './components/sessions/SessionParticipants';
 
-
-import React from 'react'
-
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import TimeSlots from "./components/TimeSlots";
-import NewTimeSlot from './components/NewTimeSlot';
-import SlotDetail from './components/SlotDetail';
-import RegistrationForm from './components/RegistrationForm';
-
+import Wrapper from './wrapper/Wrapper';
 
 function App() {
+  const token = useContext(AuthContext)
+  console.log(token)
   return (
-    <div className="App">
-      
-  
+    <Wrapper>
       <Router>
         <Routes>
           <Route path="/" exact element={<TimeSlots />} />
           <Route path="/slots/:id" element={<SlotDetail />} />
           <Route path="/newslot" exact element={<NewTimeSlot />} />
-
           <Route path='/register' element={<RegistrationForm />} />
 
-
+          <Route path='/sessions' element={<Sessions />} />
+          <Route path='/sessions/:id/people' element={<SessionParticipants />} />
         </Routes>
-      </Router>
-
-    </div>
+      </Router>    
+    </Wrapper>
   );
 }
 
