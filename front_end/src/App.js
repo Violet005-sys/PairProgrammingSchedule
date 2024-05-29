@@ -1,24 +1,28 @@
-import CompleteTable from "./Components/CompleteTable";
-import Navbar from "./Components/Navbar";
-import { BrowserRouter as Router,Routes,Route } from "react-router-dom";
-import DetailedCards from "./Components/DetailedCards";
+import React from 'react'
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import TimeSlots from "./Maincomponents/TimeSlots";
+import NewTimeSlot from './Maincomponents/NewTimeSlot';
+import SlotDetail from './Maincomponents/SlotDetail';
+//import RegistrationForm from './Maincomponents/RegistrationForm';
 
 function App() {
   return (
-    <>
-    <Navbar />
-
-    <Router>
+    <div className="App">
+      
+  
+      <Router>
         <Routes>
-          <Route path="/card" exact element={<DetailedCards />} /> 
-                
+          <Route path="/" exact element={<TimeSlots />} />
+          <Route path="/slots/:id" element={<SlotDetail />} />
+          <Route path="/newslot" exact element={<NewTimeSlot />} />
+
         </Routes>
       </Router>
-    <CompleteTable />
-    <div className="App">
+
     </div>
-    </>
   );
 }
+
 
 export default App;

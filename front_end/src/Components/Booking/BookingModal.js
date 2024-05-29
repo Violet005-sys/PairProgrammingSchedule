@@ -1,7 +1,7 @@
 import React from "react";
 import BookingForm from "./BookingForm";
 
-const BookNow = () => {
+const BookNow = ({ day_name }) => {
   return (
     <div>
       <button
@@ -25,6 +25,7 @@ const BookNow = () => {
             <div className="modal-header">
               <h1 className="modal-title fs-5" id="bookingModalLabel">
                 Fill in session details here.
+                
               </h1>
               <button
                 type="button"

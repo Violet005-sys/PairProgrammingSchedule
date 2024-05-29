@@ -1,19 +1,18 @@
 import React, {useState, useEffect} from "react";
 import { BASE_URL, token } from "../../utils/configs";
-import StaticComponent from "../unchanged/StaticElements";
 
 
 const BookingForm = () => {
   const [title, setTitle] = useState(null);
   const [desc, setDesc] = useState(null);
+  const [date, setDate] = useState(null);
   
-
-
   const handleSubmit = (e) => {
       e.preventDefault();
       const record = {
           title: title,
-          description: desc
+          description: desc,
+          date: date
       }
       console.log(record)
 
@@ -42,7 +41,7 @@ const BookingForm = () => {
   }
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="text-center">
         <div className="form-floating mb-3">
           <input
             type="text"
@@ -54,6 +53,17 @@ const BookingForm = () => {
           />
           <label htmlFor="floatingInput">Title</label>
         </div>
+        <div className="form-floating mb-3">
+          <input
+            type="date"
+            className="form-control"
+            id="floatingInput"
+            placeholder="Date of the session"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+          />
+          <label htmlFor="floatingInput">Session Date</label>
+        </div>
         <div className="form-floating">
           <textarea
             className="form-control"
@@ -64,9 +74,8 @@ const BookingForm = () => {
           ></textarea>
           <label htmlFor="floatingTextarea">Description</label>
         </div>
-        <StaticComponent />
         
-        <button type="submit" className="btn btn-primary">Book Now</button>
+        <button type="submit" className="btn btn-primary mt-3 ">Book Now</button>
       </form>
     </div>
   );
