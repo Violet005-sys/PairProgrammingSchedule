@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 // import data from './data'
 import TimeSlotTable from './TimeSlotTable'
 import CreateSlot from './CreateSlot'
+
+import AuthContext from '../context/AuthContext'
 
 const BASE_URL = 'https://appointments-booking-api.onrender.com'
 

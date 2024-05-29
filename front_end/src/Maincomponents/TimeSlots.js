@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 // import data from './data'
 import TimeSlotTable from './TimeSlotTable'
 import CreateSlot from './CreateSlot'
-import { token } from '../utils/configs'
+
+import AuthContext from '../context/AuthContext'
 
 const BASE_URL = 'https://appointments-booking-api.onrender.com'
 
 const TimeSlots2 = () => {
   const [slots, setSlots] = useState([])
+  const token = useContext(AuthContext)
 
   useEffect(() => {
     const getSlots = async() => {

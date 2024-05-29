@@ -28,6 +28,7 @@ const BookingForm = () => {
               })
               if(response.ok) {
                   window.location.reload()
+                  console.log("Do nothing!!")
               } else {
                   alert("Something Went Wrong!!")
               }
