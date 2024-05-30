@@ -14,13 +14,16 @@ import AuthContext from './context/AuthContext';
 import SessionParticipants from './components/sessions/SessionParticipants';
 
 import Wrapper from './wrapper/Wrapper';
+import Authenticate from './components/auth/Authenticate.js';
 
 
 function App() {
   const token = useContext(AuthContext)
   console.log(token)
   return (
-    <Wrapper>
+    <>
+    {token ? (
+      <Wrapper>
       <Router>
         <Routes>
           <Route path="/" exact element={<TimeSlots />} />
@@ -33,6 +36,8 @@ function App() {
         </Routes>
       </Router>    
     </Wrapper>
+    ) : (<Authenticate />)}
+    </>
   );
 }
 

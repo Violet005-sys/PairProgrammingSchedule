@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { BASE_URL } from '../../utils/configs';
 
-const RegistrationForm = () => {
-    const navigate = useNavigate()
+const RegistrationForm = ({ setShowLoginForm }) => {
     const [formData, setFormData] = useState({
         first_name: '',
         last_name: '',
@@ -12,8 +11,6 @@ const RegistrationForm = () => {
         phone_number: '',
         password: '',
     });
-
-    const BASE_URL = 'https://appointments-booking-api.onrender.com';
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -73,8 +70,8 @@ const RegistrationForm = () => {
                     />
                 </div>
             </div>
-                
-                <div className="mb-3">
+                <div className='row mb-2'>
+                <div className="col">
                     <label htmlFor="username" className="form-label">Username</label>
                     <input
                         type="text"
@@ -86,7 +83,7 @@ const RegistrationForm = () => {
                         required
                     />
                 </div>
-                <div className="mb-3">
+                <div className="col">
                     <label htmlFor="email" className="form-label">Email</label>
                     <input
                         type="email"
@@ -98,7 +95,9 @@ const RegistrationForm = () => {
                         required
                     />
                 </div>
-                <div className="mb-3">
+                </div>
+            <div className='row mb-2'>
+            <div className="col">
                     <label htmlFor="phone_number" className="form-label">Phone Number</label>
                     <input
                         type="tel"
@@ -110,7 +109,7 @@ const RegistrationForm = () => {
                         required
                     />
                 </div>
-                <div className="mb-3">
+                <div className="col">
                     <label htmlFor="password" className="form-label">Password</label>
                     <input
                         type="password"
@@ -122,11 +121,11 @@ const RegistrationForm = () => {
                         required
                     />
                 </div>
-                <div className ="text-center">
+            </div>
+                <div className ="text-center mt-3">
                    <button type="submit" className="btn btn-primary">Register</button>
-                   <button className='btn btn-primary ms-3'>Login</button>
                 </div>
-                
+                <p className='text-center'>Already have an account? <a href='#' onClick={() => setShowLoginForm(true)}>Login</a></p>
             </form>
 
         </div>
@@ -134,6 +133,5 @@ const RegistrationForm = () => {
     </div>
 </div>
     );
-};
-
+}
 export default RegistrationForm;
