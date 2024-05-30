@@ -29,15 +29,15 @@ const SlotDetail2 = () => {
   console.log(slot);
 
   return (
-    <div class="container">
-      <div class="row">
-        <div class="col-4"></div>
-        <div class="col-4">
-          <div class="card mt-5">
-            <div class="card-header"><h5 class="card-title">Would you like to book this session?</h5></div>
-            <div class="card-body">
+    <div className="container">
+      <div className="row">
+        <div className="col-4"></div>
+        <div className="col-4">
+          <div className="card mt-5">
+            <div className="card-header"><h5 className="card-title">Would you like to book this session?</h5></div>
+            <div className="card-body">
               <h5>{slot.day_name}</h5>
-              <p class="card-text">
+              <p className="card-text">
                 <p>Start: {slot.start_time}</p>
                 <p>End: {slot.end_time}</p>
               </p>
@@ -45,7 +45,7 @@ const SlotDetail2 = () => {
             </div>
           </div>
         </div>
-        <div class="col-4"></div>
+        <div className="col-4"></div>
       </div>
     </div>
   );
