@@ -8,7 +8,7 @@ const SessionCards = () => {
         <div className="card-header">
         <div className="button_group d-flex justify-content-between">
           <span>People :</span>
-        <i class="bi bi-arrow-up-right-square-fill"></i>
+        <i className="bi bi-arrow-up-right-square-fill"></i>
           {
             /* <DeleteModal />
             <JoiningModal />

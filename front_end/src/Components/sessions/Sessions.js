@@ -2,11 +2,14 @@ import React, { useContext, useEffect, useState } from 'react';
 import SessionsTable from './SessionsTable';
 import { BASE_URL } from '../../utils/configs';
 
+
 import AuthContext from '../../context/AuthContext';
 
 const Sessions = () => {
   const [sessions, setSessions] = useState([]);
   const token = useContext(AuthContext);
+
+  console.log({ token: token })
 
   useEffect(() => {
     const getBookings = async() => {
@@ -18,7 +21,6 @@ const Sessions = () => {
         }
       })
       const data = await response.json()
-      console.log(data.records)
       setSessions(data.records)
     }
     getBookings()
@@ -26,8 +28,8 @@ const Sessions = () => {
 
   return (
     <div className='row ml-2'>
-      <div className='col-3'></div>
-      <div className='col-sm-12 col-md-12 col-lg-10'>
+      <div className='col-2'></div>
+      <div className='col-sm-12 col-md-12 col-lg-8'>
         <SessionsTable sessions={sessions} />
         </div>
     </div>

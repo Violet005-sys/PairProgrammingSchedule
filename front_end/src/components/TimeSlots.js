@@ -3,12 +3,13 @@ import React, { useEffect, useState, useContext } from 'react'
 import TimeSlotTable from './TimeSlotTable'
 import CreateSlot from './CreateSlot'
 
+import { BASE_URL } from '../utils/configs'
 import AuthContext from '../context/AuthContext'
 
-const BASE_URL = 'https://appointments-booking-api.onrender.com'
 
 const TimeSlots = () => {
   const [slots, setSlots] = useState([])
+  const token = useContext(AuthContext)
 
   useEffect(() => {
     const getSlots = async() => {
@@ -16,14 +17,14 @@ const TimeSlots = () => {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY1NDUzYzgyZjQ0MzdlODc5YzE3MjUxIiwiZW1haWwiOiJwYXVsbmRhbWJvQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoicGF1bG5kYW1ibyIsImZpcnN0X25hbWUiOiJQYXVsIiwibGFzdF9uYW1lIjoiTmRhbWJvIiwicGhvbmVfbnVtYmVyIjoiKzI1NDc0NTQ5MTA5MyJ9LCJpYXQiOjE3MTY4ODYzNDIsImV4cCI6MTcxNjg4OTk0Mn0.eEPatDSZa9KGmLC6tfCOZ968RsKzaQYrcb8PF0zY3LA"
+          "Authorization": token
         }
       })
       const data = await response.json()
       setSlots(data.records)
     }
     getSlots()
-  }, [0])
+  }, [token])
 
   return (
    <div>
